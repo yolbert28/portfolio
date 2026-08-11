@@ -1,0 +1,6 @@
+# .prettierignore
+node_modules/
+dist/
+build/
+.react-router/
+app/app.css
