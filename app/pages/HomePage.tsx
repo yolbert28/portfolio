@@ -117,7 +117,7 @@ export default function HomePage() {
 
   return (
     <>
-      <main style={{ height: "100vh", overflow: "hidden", position: "relative" }}>
+      <main className="bg-linear-to-b from-black to-[#000314]" style={{ height: "100vh", overflow: "hidden", position: "relative" }}>
         <Spline
           scene={sceneUrl}
           style={{ width: "100%", height: "100vh", background: "transparent" }}
