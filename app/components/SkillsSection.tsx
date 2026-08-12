@@ -1,44 +1,8 @@
+import { SKILLS_ROW_1, SKILLS_ROW_2, SKILLS_ROW_3, type Skill } from "../data/content";
+import { useTranslation } from "react-i18next";
+import { useInView } from "../hooks/useInView";
 
-const ROW_1: Skill[] = [
-  { name: "Android", icon: "https://skillicons.dev/icons?i=androidstudio" },
-  { name: "Flutter", icon: "https://skillicons.dev/icons?i=flutter" },
-  { name: "Kotlin", icon: "https://skillicons.dev/icons?i=kotlin" },
-  { name: "Dart", icon: "https://skillicons.dev/icons?i=dart" },
-  { name: "Firebase", icon: "https://skillicons.dev/icons?i=firebase" },
-  { name: "Swift", icon: "https://skillicons.dev/icons?i=swift" },
-  { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
-  { name: "Gradle", icon: "https://skillicons.dev/icons?i=gradle" },
-];
-
-const ROW_2: Skill[] = [
-  { name: "React", icon: "https://skillicons.dev/icons?i=react" },
-  { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
-  { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
-  { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgres" },
-  { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
-  { name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
-  { name: "GraphQL", icon: "https://skillicons.dev/icons?i=graphql" },
-  { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
-];
-
-const ROW_3: Skill[] = [
-  { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
-  { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
-  { name: "GitLab", icon: "https://skillicons.dev/icons?i=gitlab" },
-  { name: "Figma", icon: "https://skillicons.dev/icons?i=figma" },
-  { name: "Linux", icon: "https://skillicons.dev/icons?i=linux" },
-  { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
-  { name: "Redis", icon: "https://skillicons.dev/icons?i=redis" },
-  { name: "Kubernetes", icon: "https://skillicons.dev/icons?i=kubernetes" },
-];
-
-// ─── Tipos ────────────────────────────────────────────────────────────────────
-interface Skill {
-  name: string;
-  icon: string;
-}
-
-// ─── Tarjeta de skill ─────────────────────────────────────────────────────────
+// ─── Skill Card ──────────────────────────────────────────────────────────────
 function SkillCard({ skill }: { skill: Skill }) {
   return (
     <div
@@ -68,7 +32,7 @@ function SkillCard({ skill }: { skill: Skill }) {
   );
 }
 
-// ─── Carrusel infinito ────────────────────────────────────────────────────────
+// ─── Infinite Carousel ────────────────────────────────────────────────────────
 function Marquee({
   skills,
   direction,
@@ -113,10 +77,13 @@ function Marquee({
   );
 }
 
-// ─── Sección principal ────────────────────────────────────────────────────────
+// ─── Main Section ─────────────────────────────────────────────────────────────
 export function SkillsSection() {
+  const { ref, inView } = useInView(0.2);
+  const { t } = useTranslation();
+
   return (
-    <section id="skills" className="relative w-full py-24 overflow-hidden">
+    <section ref={ref} id="skills" className="relative w-full py-24 overflow-hidden">
       {/* Ambient glow center */}
       <div
         aria-hidden
@@ -134,35 +101,35 @@ export function SkillsSection() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6">
-        {/* Título */}
+        {/* Title */}
         <div className="text-center mb-16">
           <p className="text-xs font-mono text-purple-500 tracking-widest mb-3">
             // 03
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            Mis Stack{" "}
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-center">
+            <span className="text-white">{t('skills.title_part1')}</span>{" "}
             <span
               style={{
-                background:
+                backgroundImage:
                   "linear-gradient(90deg, #a855f7 0%, #7c3aed 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Tecnológicos
+              {t('skills.title_part2')}
             </span>
           </h2>
-          <div className="mt-4 mx-auto w-16 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
+          <div className="mt-4 mx-auto w-16 h-px bg-linear-to-r from-transparent via-purple-500 to-transparent" />
         </div>
       </div>
 
-      {/* ── Carruseles ── */}
+      {/* ── Carousels ── */}
       <div className="flex flex-col gap-6">
-        <Marquee skills={ROW_1} direction="left" speed={45} />
+        <Marquee skills={SKILLS_ROW_1} direction="left" speed={45} />
 
-        <Marquee skills={ROW_2} direction="right" speed={52} />
+        <Marquee skills={SKILLS_ROW_2} direction="right" speed={52} />
 
-        <Marquee skills={ROW_3} direction="left" speed={48} />
+        <Marquee skills={SKILLS_ROW_3} direction="left" speed={48} />
       </div>
     </section>
   );

@@ -1,101 +1,22 @@
-import { useEffect, useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
+import { useInView } from "../hooks/useInView";
 import { GithubIcon } from "./SocialIcons";
+import { useTranslation } from "react-i18next";
+import { PROJECTS, type Project } from "../data/content";
+import { SectionBadge } from "./SectionBadge";
+import { Divider } from "./Divider";
+import { CONTACT } from "../data/content";
 
-// ─── Datos de Proyectos ───────────────────────────────────────────────────────
-const PROJECTS = [
-  {
-    title: "E-Commerce Mobile App",
-    description:
-      "Una aplicación móvil nativa con carrito de compras, pasarela de pagos integrada y notificaciones en tiempo real.",
-    image:
-      "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop",
-    tags: ["Flutter", "Firebase", "Stripe"],
-    demoLink: "#",
-    repoLink: "#",
-  },
-  {
-    title: "Financial Dashboard API",
-    description:
-      "Backend de alto rendimiento para análisis financiero. Arquitectura de microservicios con websockets para datos en vivo.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    tags: ["Node.js", "PostgreSQL", "Docker"],
-    demoLink: "#",
-    repoLink: "#",
-  },
-  {
-    title: "Crypto Tracker UI",
-    description:
-      "Interfaz de usuario responsiva con gráficos interactivos y actualizaciones en tiempo real de mercados de criptomonedas.",
-    image:
-      "https://images.unsplash.com/photo-1605792657360-d6211bc3f693?q=80&w=800&auto=format&fit=crop",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    demoLink: "#",
-    repoLink: "#",
-  },
-];
+function ProjectCard({ project, index, inView }: { project: Project; index: number; inView: boolean }) {
+  const { t } = useTranslation();
 
-// ─── Hook: Intersection Observer ──────────────────────────────────────────────
-function useInView(threshold = 0.1) {
-  const ref = useRef<HTMLElement>(null);
-  const [inView, setInView] = useState(false);
+  const projectData = {
+    title: t(`projects.items.${project.translationKey}.title`, { defaultValue: project.translationKey }),
+    description: t(`projects.items.${project.translationKey}.description`),
+    demoLabel: t('projects.demo'),
+    codeLabel: t('projects.code'),
+  };
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          obs.disconnect();
-        }
-      },
-      { threshold }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
-
-  return { ref, inView };
-}
-
-// ─── Sub-componentes ──────────────────────────────────────────────────────────
-function SectionBadge({ inView }: { inView: boolean }) {
-  return (
-    <div
-      className="flex items-center gap-2 text-xs font-mono tracking-widest"
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(12px)",
-        transition: "opacity 0.6s ease, transform 0.6s ease",
-        transitionDelay: "0ms",
-      }}
-    >
-      <span className="text-purple-500 select-none">//</span>
-      <span className="text-purple-400 font-bold">04</span>
-    </div>
-  );
-}
-
-function Divider({ inView }: { inView: boolean }) {
-  return (
-    <div className="relative h-px w-full my-6 overflow-hidden">
-      <div className="absolute inset-0 bg-white/10" />
-      <div
-        className="absolute inset-y-0 left-0 bg-gradient-to-r from-transparent via-purple-400 to-transparent"
-        style={{
-          width: inView ? "100%" : "0%",
-          transition: "width 1.2s cubic-bezier(0.22, 1, 0.36, 1)",
-          transitionDelay: "300ms",
-          opacity: 0.7,
-        }}
-      />
-    </div>
-  );
-}
-
-function ProjectCard({ project, index, inView }: { project: any; index: number; inView: boolean }) {
   return (
     <div
       className="group relative flex flex-col rounded-2xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 transition-colors duration-500"
@@ -106,23 +27,23 @@ function ProjectCard({ project, index, inView }: { project: any; index: number; 
         transitionDelay: `${600 + index * 150}ms`,
       }}
     >
-      {/* Imagen del proyecto */}
+      {/* Project image */}
       <div className="relative w-full h-48 overflow-hidden bg-black/50">
         <img
           src={project.image}
-          alt={project.title}
+          alt={projectData.title}
           className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#000314] to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#000314] to-transparent opacity-80" />
       </div>
 
-      {/* Contenido */}
-      <div className="flex flex-col flex-1 p-6">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
-          {project.title}
+      {/* Content */}
+      <div className="relative p-6 flex flex-col flex-1 z-20">
+        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
+          {projectData.title}
         </h3>
-        <p className="text-sm text-gray-400 leading-relaxed mb-6 flex-1">
-          {project.description}
+        <p className="text-sm text-gray-400 mb-6 leading-relaxed flex-1">
+          {projectData.description}
         </p>
 
         {/* Tags */}
@@ -137,35 +58,40 @@ function ProjectCard({ project, index, inView }: { project: any; index: number; 
           ))}
         </div>
 
-        {/* Enlaces */}
+        {/* Links */}
         <div className="flex items-center gap-4 mt-auto">
-          <a
+          {project.demoLink && (<a
             href={project.demoLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-white hover:text-purple-400 transition-colors"
           >
             <ExternalLink size={16} />
-            <span>Demo</span>
-          </a>
-          <a
+            <span>{projectData.demoLabel}</span>
+          </a>)}
+          {project.repoLink && (<a
             href={project.repoLink}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors"
           >
             <GithubIcon size={16} />
-            <span>Código</span>
-          </a>
+            <span>{projectData.codeLabel}</span>
+          </a>)}
         </div>
       </div>
     </div>
   );
 }
 
-// ─── Sección Principal ────────────────────────────────────────────────────────
+// ─── Main Section ─────────────────────────────────────────────────────────────
 export function ProjectsSection() {
   const { ref, inView } = useInView(0.1);
+  const { t } = useTranslation();
+
+  const sectionTitle = t('projects.title');
+  const sectionSubtitle = t('projects.subtitle');
+  const viewMoreLabel = t('projects.view_more');
 
   return (
     <section
@@ -175,7 +101,7 @@ export function ProjectsSection() {
     >
       {/* Ambient Glow */}
       <div
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10"
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 rounded-full opacity-10"
         style={{
           background:
             "radial-gradient(circle, rgba(168,85,247,0.5) 0%, transparent 60%)",
@@ -187,7 +113,7 @@ export function ProjectsSection() {
         {/* HEADER ROW */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
           <div className="flex items-center gap-4">
-            <SectionBadge inView={inView} />
+            <SectionBadge inView={inView} number="04" />
             <h2
               className="text-5xl sm:text-6xl font-bold text-white tracking-tight"
               style={{
@@ -197,12 +123,12 @@ export function ProjectsSection() {
                 transitionDelay: "100ms",
               }}
             >
-              Proyectos
+              {sectionTitle}
             </h2>
           </div>
 
           <p
-            className="text-sm text-gray-400 leading-relaxed max-w-[240px] sm:text-right"
+            className="text-sm text-gray-400 leading-relaxed max-w-60 sm:text-right"
             style={{
               opacity: inView ? 1 : 0,
               transform: inView ? "translateY(0)" : "translateY(12px)",
@@ -210,7 +136,7 @@ export function ProjectsSection() {
               transitionDelay: "200ms",
             }}
           >
-            Una selección de trabajos recientes, combinando diseño moderno con arquitecturas robustas.
+            {sectionSubtitle}
           </p>
         </div>
 
@@ -235,7 +161,7 @@ export function ProjectsSection() {
           }}
         >
           <a
-            href="https://github.com/tu-usuario"
+            href={CONTACT.github}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 text-sm font-medium text-white
@@ -244,7 +170,7 @@ export function ProjectsSection() {
                        transition-all duration-300"
           >
             <GithubIcon size={18} />
-            Ver más en GitHub
+            {viewMoreLabel}
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>

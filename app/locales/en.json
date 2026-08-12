@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "topbar": {
+    "contact": "Write me"
+  },
+  "hero": {
+    "download_cv": "Download CV",
+    "professions": [
+      "Full Stack Developer",
+      "Mobile Developer",
+      "Android & Flutter"
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "headline": [
+      "I am a software",
+      "developer working across",
+      "the entire full stack."
+    ],
+    "paragraphs": [
+      "Computer Engineering student (8th semester) with real-world experience building backend solutions in Python and Odoo, and knowledge in frontend (React) and mobile (Flutter, Kotlin).",
+      "I focus on solving real business problems before writing code, and ensuring that every part of the system—from the database to the interface—works as expected."
+    ],
+    "stats": [
+      { "value": "1+", "label": "Year of experience" },
+      { "value": "7+", "label": "Projects delivered" },
+      { "value": "5+", "label": "Technologies mastered" }
+    ],
+    "subtitle": "Modern full-stack applications & Odoo developer.",
+    "view_projects": "View projects"
+  },
+  "skills": {
+    "title_part1": "Tech",
+    "title_part2": "Arsenal"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Full Stack Developer in training, with hands-on experience in web and mobile projects (Android/Flutter).",
+    "recommendation_letter": "Recommendation Letter",
+    "jobs": {
+      "ricardo_teran": {
+        "company": "RicardoTeran.net",
+        "location": "Barquisimeto, Venezuela",
+        "role": "Odoo Developer",
+        "date": "January — July (2026)",
+        "description": "During my role as a developer, I focused on creating and maintaining solutions within Odoo. I developed a module from scratch to manage customized manufacturing processes for a tinting company, and I built custom reports for business data management. Additionally, I worked directly on the Point of Sale (POS) module, where I helped repair and stabilize the system integration with fiscal printers, ensuring the continuity of the client's operations."
+      },
+      "ucla": {
+        "company": "UCLA — Computer Engineering",
+        "location": "Barquisimeto, Venezuela",
+        "role": "Academic Project Developer",
+        "date": "2021 — 2026",
+        "description": "I designed and developed multiple software projects as part of my university education, applying concepts of software architecture, databases, and full-stack development. I worked on web solutions and mobile applications with microservices architectures and design patterns, strengthening my technical judgment in scenarios with changing requirements, just like in real-world industry projects."
+      }
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of recent work combining modern design with robust architectures.",
+    "demo": "Live Demo",
+    "code": "Code",
+    "view_more": "View more on GitHub",
+    "items": {
+      "watery": {
+        "title": "Watery",
+        "description": "Android application with a widget that automates water price calculations (barrels) by extracting the official Central Bank of Venezuela (BCV) exchange rate through web scraping."
+      },
+      "financial": {
+        "title": "Financial Dashboard API",
+        "description": "High-performance backend for financial analysis. Microservices architecture with websockets for live data."
+      },
+      "crypto": {
+        "title": "Crypto Tracker UI",
+        "description": "Responsive user interface with interactive charts and real-time updates for cryptocurrency markets."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "heading_part1": "Let's Work",
+    "heading_part2": "Together",
+    "description": "Whether your company is looking to add a Full Stack developer to the team, you have a project in mind, or you simply want to chat about an opportunity. My inbox is always open.",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

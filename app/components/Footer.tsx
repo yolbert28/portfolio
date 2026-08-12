@@ -1,8 +1,11 @@
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, XIcon } from "./SocialIcons";
+import { GithubIcon, LinkedinIcon } from "./SocialIcons";
+import { useTranslation } from "react-i18next";
+import { CONTACT } from "../data/content";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="relative w-full border-t border-white/5 bg-transparent overflow-hidden">
@@ -15,16 +18,15 @@ export function Footer() {
             <span className="text-purple-500">.</span>
           </a>
           <p className="text-xs text-gray-500">
-            &copy; {year} Todos los derechos reservados.
+            &copy; {year} {t('footer.rights')}
           </p>
         </div>
 
         {/* SOCIAL LINKS */}
         <div className="flex items-center gap-4">
-          <SocialLink href="https://github.com" icon={<GithubIcon size={18} />} label="GitHub" />
-          <SocialLink href="https://linkedin.com" icon={<LinkedinIcon size={18} />} label="LinkedIn" />
-          <SocialLink href="https://x.com" icon={<XIcon size={18} />} label="X (Twitter)" />
-          <SocialLink href="mailto:tuemail@ejemplo.com" icon={<Mail size={18} />} label="Email" />
+          <SocialLink href={CONTACT.github} icon={<GithubIcon size={18} />} label="GitHub" />
+          <SocialLink href={CONTACT.linkedin} icon={<LinkedinIcon size={18} />} label="LinkedIn" />
+          <SocialLink href={`mailto:${CONTACT.email}`} icon={<Mail size={18} />} label="Email" />
         </div>
 
       </div>
