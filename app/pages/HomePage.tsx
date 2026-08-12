@@ -16,6 +16,30 @@ const PAUSE_AFTER_DELETE = 400; // ms to pause before typing next word
 export default function HomePage() {
   const { t, i18n } = useTranslation();
 
+  const [sceneUrl, setSceneUrl] = useState("/home.spline");
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      // sm or smaller
+      if (width < 768) {
+        setSceneUrl("/home_sm.spline");
+      }
+      // md
+      else if (width >= 768 && width < 1024) {
+        setSceneUrl("/home_md.spline");
+      }
+      // lg and above
+      else {
+        setSceneUrl("/home.spline");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const professions = t('hero.professions', { returnObjects: true }) as string[];
   const professionsRef = useRef(professions);
 
@@ -25,7 +49,7 @@ export default function HomePage() {
   }, [professions]);
 
   const cvLabel = t('hero.download_cv');
-  const cvHref = i18n.language.startsWith('en') ? '/resume_en.pdf' : '/curriculum.pdf';
+  const cvHref = i18n.language.startsWith('en') ? '/curriculum.pdf' : '/curriculum.pdf';
 
   const splineRef = useRef<any>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -95,7 +119,7 @@ export default function HomePage() {
     <>
       <main style={{ height: "100vh", overflow: "hidden", position: "relative" }}>
         <Spline
-          scene="/home.spline"
+          scene={sceneUrl}
           style={{ width: "100%", height: "100vh", background: "transparent" }}
           onLoad={onLoad}
         />

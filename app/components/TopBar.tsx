@@ -37,7 +37,7 @@ export function TopBar() {
         if (element) {
           const rect = element.getBoundingClientRect();
           // If the top of the section passed one third of the screen (approx)
-          if (rect.top <= window.innerHeight / 3) {
+          if (rect.top <= window.innerHeight / 2) {
             currentSection = link.href;
           }
         }
@@ -117,7 +117,7 @@ export function TopBar() {
         </ul>
 
         {/* Actions */}
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={toggleLanguage}
             className="flex items-center gap-1.5 rounded-full border border-white/10
@@ -130,7 +130,7 @@ export function TopBar() {
           </button>
           <a
             href={`mailto:${CONTACT.email}`}
-            className="flex items-center gap-2 rounded-full border border-purple-500/40
+            className="hidden sm:flex items-center gap-2 rounded-full border border-purple-500/40
                        px-4 py-2 text-sm text-gray-100
                        hover:border-purple-400 hover:shadow-[0_0_16px_rgba(168,85,247,0.5)]
                        transition-all duration-300"
