@@ -1,7 +1,11 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Spline from "@splinetool/react-spline";
 import { AboutSection } from "../components/AboutSection";
+import { CareerSection } from "../components/CareerSection";
 import { SkillsSection } from "../components/SkillsSection";
+import { ProjectsSection } from "../components/ProjectsSection";
+import { ContactSection } from "../components/ContactSection";
+import { Footer } from "../components/Footer";
 
 // Textos que va "tipeando" en bucle.
 // Si solo quieres uno fijo (sin loop), deja un único elemento en el array.
@@ -19,6 +23,15 @@ const PAUSE_AFTER_DELETE = 400; // ms de pausa antes de escribir la siguiente pa
 export default function HomePage() {
   const splineRef = useRef(null);
   const timeoutRef = useRef(null);
+
+  // Fija el alto del hero a window.innerHeight una sola vez al montar.
+  // Esto evita que Spline cambie de tamaño al hacer scroll (el valor de
+  // 100vh puede cambiar cuando aparece/desaparece la barra de scroll o
+  // el chrome del browser).
+  const [heroHeight, setHeroHeight] = useState("100vh");
+  useEffect(() => {
+    setHeroHeight(`${window.innerHeight}px`);
+  }, []);
 
   // Limpieza del timeout si el componente se desmonta a mitad de la animación
   useEffect(() => {
@@ -70,15 +83,19 @@ export default function HomePage() {
 
   return (
     <>
-      <main>
+      <main style={{ height: heroHeight, overflow: "hidden" }}>
         <Spline
           scene="/home.spline"
-          style={{ width: "100%", height: "100vh", background: "transparent", }}
+          style={{ width: "100%", height: heroHeight, background: "transparent" }}
           onLoad={onLoad}
         />
       </main>
       <AboutSection />
+      <CareerSection />
       <SkillsSection />
+      <ProjectsSection />
+      <ContactSection />
+      <Footer />
     </>
   );
 }

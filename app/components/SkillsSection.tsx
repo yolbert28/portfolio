@@ -1,38 +1,35 @@
-// ─── Datos ────────────────────────────────────────────────────────────────────
-// Usa skillicons.dev para íconos estilo "app icon". Edita estos arrays con tus skills.
-// Referencia de nombres: https://skillicons.dev
 
 const ROW_1: Skill[] = [
-  { name: "Android",         icon: "https://skillicons.dev/icons?i=androidstudio" },
-  { name: "Flutter",         icon: "https://skillicons.dev/icons?i=flutter" },
-  { name: "Kotlin",          icon: "https://skillicons.dev/icons?i=kotlin" },
-  { name: "Dart",            icon: "https://skillicons.dev/icons?i=dart" },
-  { name: "Firebase",        icon: "https://skillicons.dev/icons?i=firebase" },
-  { name: "Swift",           icon: "https://skillicons.dev/icons?i=swift" },
-  { name: "Java",            icon: "https://skillicons.dev/icons?i=java" },
-  { name: "Gradle",          icon: "https://skillicons.dev/icons?i=gradle" },
+  { name: "Android", icon: "https://skillicons.dev/icons?i=androidstudio" },
+  { name: "Flutter", icon: "https://skillicons.dev/icons?i=flutter" },
+  { name: "Kotlin", icon: "https://skillicons.dev/icons?i=kotlin" },
+  { name: "Dart", icon: "https://skillicons.dev/icons?i=dart" },
+  { name: "Firebase", icon: "https://skillicons.dev/icons?i=firebase" },
+  { name: "Swift", icon: "https://skillicons.dev/icons?i=swift" },
+  { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
+  { name: "Gradle", icon: "https://skillicons.dev/icons?i=gradle" },
 ];
 
 const ROW_2: Skill[] = [
-  { name: "React",           icon: "https://skillicons.dev/icons?i=react" },
-  { name: "TypeScript",      icon: "https://skillicons.dev/icons?i=ts" },
-  { name: "Node.js",         icon: "https://skillicons.dev/icons?i=nodejs" },
-  { name: "PostgreSQL",      icon: "https://skillicons.dev/icons?i=postgres" },
-  { name: "MongoDB",         icon: "https://skillicons.dev/icons?i=mongodb" },
-  { name: "Docker",          icon: "https://skillicons.dev/icons?i=docker" },
-  { name: "GraphQL",         icon: "https://skillicons.dev/icons?i=graphql" },
-  { name: "Express",         icon: "https://skillicons.dev/icons?i=express" },
+  { name: "React", icon: "https://skillicons.dev/icons?i=react" },
+  { name: "TypeScript", icon: "https://skillicons.dev/icons?i=ts" },
+  { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
+  { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgres" },
+  { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
+  { name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
+  { name: "GraphQL", icon: "https://skillicons.dev/icons?i=graphql" },
+  { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
 ];
 
 const ROW_3: Skill[] = [
-  { name: "Git",             icon: "https://skillicons.dev/icons?i=git" },
-  { name: "GitHub",          icon: "https://skillicons.dev/icons?i=github" },
-  { name: "GitLab",          icon: "https://skillicons.dev/icons?i=gitlab" },
-  { name: "Figma",           icon: "https://skillicons.dev/icons?i=figma" },
-  { name: "Linux",           icon: "https://skillicons.dev/icons?i=linux" },
-  { name: "Python",          icon: "https://skillicons.dev/icons?i=python" },
-  { name: "Redis",           icon: "https://skillicons.dev/icons?i=redis" },
-  { name: "Kubernetes",      icon: "https://skillicons.dev/icons?i=kubernetes" },
+  { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
+  { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
+  { name: "GitLab", icon: "https://skillicons.dev/icons?i=gitlab" },
+  { name: "Figma", icon: "https://skillicons.dev/icons?i=figma" },
+  { name: "Linux", icon: "https://skillicons.dev/icons?i=linux" },
+  { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
+  { name: "Redis", icon: "https://skillicons.dev/icons?i=redis" },
+  { name: "Kubernetes", icon: "https://skillicons.dev/icons?i=kubernetes" },
 ];
 
 // ─── Tipos ────────────────────────────────────────────────────────────────────
@@ -60,7 +57,6 @@ function SkillCard({ skill }: { skill: Skill }) {
           alt={skill.name}
           width={40}
           height={40}
-          loading="lazy"
           draggable={false}
           style={{ imageRendering: "auto" }}
         />
@@ -82,14 +78,12 @@ function Marquee({
   direction: "left" | "right";
   speed?: number;
 }) {
-  // Duplicamos para que el bucle sea seamless
-  const doubled = [...skills, ...skills];
+  const repeated = [...skills, ...skills, ...skills, ...skills];
   const duration = `${speed}s`;
 
   return (
     <div
-      className="overflow-hidden w-full relative"
-      // Fades laterales para suavizar los bordes
+      className="overflow-hidden w-full relative flex"
       style={{
         maskImage:
           "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
@@ -104,9 +98,16 @@ function Marquee({
           width: "max-content",
         }}
       >
-        {doubled.map((skill, i) => (
-          <SkillCard key={`${skill.name}-${i}`} skill={skill} />
-        ))}
+        <div className="flex">
+          {repeated.map((skill, i) => (
+            <SkillCard key={`block1-${skill.name}-${i}`} skill={skill} />
+          ))}
+        </div>
+        <div className="flex">
+          {repeated.map((skill, i) => (
+            <SkillCard key={`block2-${skill.name}-${i}`} skill={skill} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -136,7 +137,7 @@ export function SkillsSection() {
         {/* Título */}
         <div className="text-center mb-16">
           <p className="text-xs font-mono text-purple-500 tracking-widest mb-3">
-            // 02
+            // 03
           </p>
           <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
             Mis Stack{" "}
@@ -157,14 +158,11 @@ export function SkillsSection() {
 
       {/* ── Carruseles ── */}
       <div className="flex flex-col gap-6">
-        {/* Fila 1: → izquierda */}
-        <Marquee skills={ROW_1} direction="left"  speed={35} />
+        <Marquee skills={ROW_1} direction="left" speed={45} />
 
-        {/* Fila 2: → derecha */}
-        <Marquee skills={ROW_2} direction="right" speed={42} />
+        <Marquee skills={ROW_2} direction="right" speed={52} />
 
-        {/* Fila 3: → izquierda */}
-        <Marquee skills={ROW_3} direction="left"  speed={38} />
+        <Marquee skills={ROW_3} direction="left" speed={48} />
       </div>
     </section>
   );

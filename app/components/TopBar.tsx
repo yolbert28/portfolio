@@ -4,6 +4,7 @@ import { Mail } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Sobre mí", href: "#about" },
+  { label: "Carrera", href: "#career" },
   { label: "Skills", href: "#skills" },
   { label: "Proyectos", href: "#projects" },
   { label: "Contacto", href: "#contact" },
@@ -28,11 +29,10 @@ export function TopBar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${scrolled
           ? "bg-black/70 backdrop-blur-md border-b border-white/10"
           : "bg-transparent border-b border-transparent"
-      }`}
+        }`}
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 h-16">
         {/* Logo + nombre */}
@@ -61,19 +61,17 @@ export function TopBar() {
                 <a
                   href={href}
                   onClick={handleClick(href)}
-                  className={`relative text-sm transition-colors duration-200 ${
-                    isActive
+                  className={`relative text-sm transition-colors duration-200 ${isActive
                       ? "text-white"
                       : "text-gray-400 hover:text-gray-200"
-                  }`}
+                    }`}
                 >
                   {label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-px bg-purple-400 transition-all duration-300 ${
-                      isActive
+                    className={`absolute -bottom-1 left-0 h-px bg-purple-400 transition-all duration-300 ${isActive
                         ? "w-full shadow-[0_0_8px_rgba(168,85,247,0.8)]"
                         : "w-0"
-                    }`}
+                      }`}
                   />
                 </a>
               </li>
