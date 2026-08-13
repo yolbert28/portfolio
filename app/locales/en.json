@@ -59,7 +59,7 @@
         "location": "Barquisimeto, Venezuela",
         "role": "Odoo Developer",
         "date": "January — July (2026)",
-        "description": "As a developer, I was responsible for the creation and maintenance of solutions within the Odoo ecosystem, aimed at optimizing key business processes. I designed and implemented, from scratch, a custom module for managing the manufacturing processes of a dyeing company, as well as tailored reports for the analysis and management of operational data. \n\n I also participated in the development of the Point of Sale (POS) module, where I diagnosed and resolved issues in the integration with fiscal printers, contributing to system stability and the continuity of the client's operations. Throughout this process, I also gained experience in project management using agile methodologies, employing Kanban boards for task organization and tracking."
+        "description": "As a developer, I was responsible for the creation and maintenance of solutions within the Odoo ecosystem, aimed at optimizing key business processes. I designed and implemented, from scratch, a custom module for managing the manufacturing processes of a paint management company, as well as tailored reports for the analysis and management of operational data. \n\n I also participated in the development of the Point of Sale (POS) module, where I diagnosed and resolved issues in the integration with fiscal printers, contributing to system stability and the continuity of the client's operations. Throughout this process, I also gained experience in project management using agile methodologies, employing Kanban boards for task organization and tracking."
       },
       "ucla": {
         "company": "UCLA — Computer Engineering",
@@ -85,9 +85,9 @@
         "title": "Personal Portfolio",
         "description": "Personal website built to present my developer profile in a professional and memorable way. Features bilingual support (ES/EN), smooth animations and an interactive 3D hero scene."
       },
-      "crypto": {
-        "title": "Oncomming",
-        "description": "Responsive user interface with interactive charts and real-time updates for cryptocurrency markets."
+      "university_bank": {
+        "title": "University Bank",
+        "description": "Frontend application for a fictitious university bank built with React and Redux. It features a complete online banking experience, including user authentication, contact management, account movements, and simulated money transfers."
       }
     }
   },

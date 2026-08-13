@@ -92,21 +92,21 @@ export const PROJECTS: Project[] = [
     image:
       "/watery.jpg",
     tags: ["Kotlin", "Jetpack Compose", "Room"],
-    repoLink: "https://github.com/yolbert28/watery.git",
+    repoLink: "https://github.com/yolbert28/watery",
   },
   {
     translationKey: "portfolio",
     image: "/portfolio.png",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    tags: ["React", "React Router Framework", "TypeScript", "Tailwind CSS", "Vite"],
     repoLink: "https://github.com/yolbert28/portfolio",
   },
   {
-    translationKey: "crypto",
+    translationKey: "university_bank",
     image:
-      "https://images.unsplash.com/photo-1605792657360-d6211bc3f693?q=80&w=800&auto=format&fit=crop",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    demoLink: "#",
-    repoLink: "#",
+      "/banco.png",
+    tags: ["React", "React Router Framework", "TypeScript", "Tailwind CSS"],
+    demoLink: "https://banco-universitario.vercel.app",
+    repoLink: "https://github.com/yolbert28/banco-universitario",
   },
 ];
 

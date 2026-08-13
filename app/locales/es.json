@@ -85,9 +85,9 @@
         "title": "Portfolio Personal",
         "description": "Sitio web personal diseñado para presentar mi perfil como desarrollador de forma profesional e impactante. Incluye soporte bilingüe (ES/EN), animaciones fluidas y una escena 3D interactiva."
       },
-      "crypto": {
-        "title": "Oncomming",
-        "description": "Interfaz de usuario responsiva con gráficos interactivos y actualizaciones en tiempo real de mercados de criptomonedas."
+      "university_bank": {
+        "title": "Banco Universitario",
+        "description": "Aplicación frontend para un banco universitario ficticio desarrollada con React y Redux. Ofrece una experiencia completa de banca en línea que incluye autenticación de usuarios, directorio de contactos, historial de movimientos y simulación de transferencias."
       }
     }
   },
