@@ -87,7 +87,8 @@ export const SKILLS_ROW_3: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     translationKey: "watery",
-    image: "assets/app.jpg",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
     tags: ["Kotlin", "Jetpack Compose", "Room"],
     repoLink: "https://github.com/yolbert28/watery.git",
   },
@@ -108,6 +109,8 @@ export const PROJECTS: Project[] = [
     repoLink: "#",
   },
 ];
+
+export const CV = "/curriculum.pdf";
 
 // ─── Contact Information ──────────────────────────────────────────────────────
 export const CONTACT = {

@@ -51,7 +51,7 @@ function JobItem({ job, index }: { job: Job; index: number }) {
           </span>
         </div>
 
-        <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
+        <p className="text-sm text-gray-400 leading-relaxed max-w-3xl whitespace-pre-line">
           {jobData.description}
         </p>
 

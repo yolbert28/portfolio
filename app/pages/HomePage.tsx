@@ -48,9 +48,6 @@ export default function HomePage() {
     professionsRef.current = professions;
   }, [professions]);
 
-  const cvLabel = t('hero.download_cv');
-  const cvHref = i18n.language.startsWith('en') ? '/curriculum.pdf' : '/curriculum.pdf';
-
   const splineRef = useRef<any>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -110,6 +107,9 @@ export default function HomePage() {
   }
 
   function onLoad(spline: any) {
+    if (timeoutRef.current !== null) {
+      clearTimeout(timeoutRef.current);
+    }
     splineRef.current = spline;
     spline.setVariable("profession", "");
     startTypewriter(spline);
@@ -126,7 +126,7 @@ export default function HomePage() {
         {/* Transparent overlay: blocks interaction with the Spline scene */}
         <div className="absolute inset-0 z-10" aria-hidden="true" />
         {/* ── CV Button ── */}
-        <div className="absolute bottom-10 left-10 z-20 animate-[fadeSlideUp_0.8s_ease_1.5s_both]">
+        {/* <div className="absolute bottom-10 left-10 z-20 animate-[fadeSlideUp_0.8s_ease_1.5s_both]">
           <a
             href={cvHref}
             download
@@ -139,7 +139,6 @@ export default function HomePage() {
                        transition-all duration-300 ease-out
                        animate-[floatBtn_3s_ease-in-out_infinite]"
           >
-            {/* document icon */}
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 border border-purple-500/30 group-hover:bg-purple-500/40 transition-colors duration-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +160,6 @@ export default function HomePage() {
             <span className="text-gray-200 group-hover:text-white transition-colors duration-300">
               {cvLabel}
             </span>
-            {/* Download arrow */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -177,7 +175,7 @@ export default function HomePage() {
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <AboutSection />

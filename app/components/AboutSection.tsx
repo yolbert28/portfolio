@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { useInView } from "../hooks/useInView";
-import { ABOUT_TAGS } from "../data/content";
+import { ABOUT_TAGS, CV } from "../data/content";
 import { SectionBadge } from "./SectionBadge";
 import { Divider } from "./Divider";
+import { FileText } from "lucide-react";
 
 function AnimatedHeadline({ inView, HEADLINE_WORDS }: { inView: boolean, HEADLINE_WORDS: string[] }) {
   return (
-    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight text-white">
+    <h2 className="text-4xl sm:text-5xl lg:text-[52px] font-bold leading-[1.08] tracking-tight text-white">
       {HEADLINE_WORDS.map((line, i) => (
         <span key={i} className="block overflow-hidden">
           <span
@@ -59,6 +60,7 @@ export function AboutSection() {
   const { t } = useTranslation();
 
   const title = t('about.title');
+  const cvLabel = t('about.download_cv');
   const subtitle = t('about.subtitle');
   const viewProjects = t('about.view_projects');
   const headline = t('about.headline', { returnObjects: true }) as string[];
@@ -94,9 +96,8 @@ export function AboutSection() {
           <div className="flex items-center gap-4">
             <SectionBadge inView={inView} number="01" />
             <h2
-              className={`text-5xl sm:text-6xl font-bold text-white tracking-tight transition-all duration-700 ease-out ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-              }`}
+              className={`text-5xl sm:text-6xl font-bold text-white tracking-tight transition-all duration-700 ease-out ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                }`}
               style={{ transitionDelay: "100ms" }}
             >
               {title}
@@ -104,9 +105,8 @@ export function AboutSection() {
           </div>
 
           <p
-            className={`text-sm text-gray-400 leading-relaxed max-w-55 sm:text-right transition-all duration-700 ease-out ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
+            className={`text-sm text-gray-400 leading-relaxed max-w-55 sm:text-right transition-all duration-700 ease-out ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+              }`}
             style={{ transitionDelay: "200ms" }}
           >
             {subtitle}
@@ -136,42 +136,54 @@ export function AboutSection() {
             {paragraphs.map((text, i) => (
               <p
                 key={i}
-                className={`text-base text-gray-400 leading-relaxed transition-all duration-700 ease-out ${
-                  inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
-                }`}
+                className={`text-base text-gray-400 leading-relaxed transition-all duration-700 ease-out ${inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
+                  }`}
                 style={{ transitionDelay: `${800 + i * 150}ms` }}
               >
                 {text}
               </p>
             ))}
-
-            <div
-              className={`flex items-center gap-4 mt-4 transition-all duration-700 ease-out ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: "1150ms" }}
-            >
+            <div>
               <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .querySelector("#projects")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group inline-flex items-center gap-2 text-sm font-medium text-white
+                href={CV}
+                download
+                className={`group flex items-center justify-center w-2/3 gap-1.5 text-xs font-medium text-purple-300 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 hover:border-purple-400 px-5 py-3 rounded-full transition-all duration-300 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                style={{ transitionDelay: "1150ms" }}
+              >
+                {cvLabel}
+                <FileText size={14} className="group-hover:scale-110 transition-transform duration-300" />
+              </a>
+
+              <div
+                className={`flex items-center gap-4 mt-4 transition-all duration-700 ease-out ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  }`}
+                style={{ transitionDelay: "1150ms" }}
+              >
+                <a
+                  href="#projects"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector("#projects")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-white
                            border border-white/15 rounded-full px-5 py-2.5
                            hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)]
                            transition-all duration-300"
-              >
-                {viewProjects}
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
+                >
+                  {viewProjects}
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
 
-              <div className="h-px flex-1 bg-linear-to-r from-white/15 to-transparent" />
+                <div className="h-px flex-1 bg-linear-to-r from-white/15 to-transparent" />
+              </div>
+
             </div>
+
           </div>
         </div>
 
@@ -181,9 +193,8 @@ export function AboutSection() {
               key={tag}
               className={`text-xs font-mono text-gray-500 border border-white/8 rounded-full px-3 py-1 cursor-default
                          hover:text-purple-300 hover:border-purple-500/40
-                         transition-all duration-500 ease-out ${
-                           inView ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-2.5 scale-95"
-                         }`}
+                         transition-all duration-500 ease-out ${inView ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-2.5 scale-95"
+                }`}
               style={{ transitionDelay: `${1300 + i * 60}ms` }}
             >
               {tag}

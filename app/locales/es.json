@@ -10,7 +10,6 @@
     "contact": "Escríbeme"
   },
   "hero": {
-    "download_cv": "Descargar CV",
     "professions": [
       "Desarrollador Full Stack",
       "Desarrollador Móvil",
@@ -19,19 +18,29 @@
   },
   "about": {
     "title": "Sobre Mí",
+    "download_cv": "Descargar CV",
     "headline": [
-      "Soy un desarrollador",
-      "de software que trabaja",
-      "en todo el stack completo."
+      "Desarrollador Full Stack",
+      "con enfoque en soluciones",
+      "robustas y escalables."
     ],
     "paragraphs": [
-      "Estudiante de Ingeniería Informática (8vo semestre) con experiencia real construyendo soluciones backend en Python y Odoo, y conocimientos en frontend (React) y mobile (Flutter, Kotlin).",
-      "Me enfoco en resolver problemas reales del negocio antes de escribir código, y en que cada parte del sistema —de la base de datos a la interfaz— funcione como se espera."
+      "Estudiante de Ingeniería Informática (8vo semestre), con experiencia en desarrollo backend con Python y Odoo, y conocimientos en frontend (React) y aplicaciones móviles (Flutter, Kotlin).",
+      "Enfoque en soluciones alineadas a las necesidades del negocio, con atención al detalle en cada capa del sistema: base de datos, lógica de negocio e interfaz de usuario."
     ],
     "stats": [
-      { "value": "1+", "label": "Año de experiencia" },
-      { "value": "7+", "label": "Proyectos entregados" },
-      { "value": "5+", "label": "Tecnologías dominadas" }
+      {
+        "value": "1+",
+        "label": "Año de experiencia"
+      },
+      {
+        "value": "7+",
+        "label": "Proyectos entregados"
+      },
+      {
+        "value": "5+",
+        "label": "Tecnologías dominadas"
+      }
     ],
     "subtitle": "Full-stack de aplicaciones modernas y desarrollador odoo.",
     "view_projects": "Ver proyectos"
@@ -50,14 +59,14 @@
         "location": "Barquisimeto, Venezuela",
         "role": "Desarrollador Odoo",
         "date": "Enero — Julio (2026)",
-        "description": "Durante mi rol como desarrollador, me enfoqué en la creación y mantenimiento de soluciones dentro de Odoo. Desarrollé desde cero un módulo para gestionar los procesos de fabricación personalizados de una empresa de tinteo y elaboré reportes a medida para el manejo de datos del negocio. Además, trabajé directamente en el módulo de Punto de Venta (POS), donde ayudé a reparar y estabilizar la integración del sistema con impresoras fiscales, asegurando la continuidad de las operaciones del cliente."
+        "description": "Como desarrollador, me encargué de la creación y mantenimiento de soluciones dentro del ecosistema Odoo, orientadas a optimizar procesos clave del negocio. Diseñé e implementé, desde cero, un módulo personalizado para la gestión de procesos de fabricación de una empresa del sector de tinteo, además de reportes a medida para el análisis y manejo de datos operativos. \n\n Asimismo, participé en el desarrollo del módulo de Punto de Venta (POS), donde diagnostiqué y resolví incidencias en la integración con impresoras fiscales, contribuyendo a la estabilidad del sistema y la continuidad operativa del cliente. Durante este proceso, también adquirí experiencia en gestión de proyectos mediante metodologías ágiles, utilizando tableros Kanban para la organización y seguimiento de tareas."
       },
       "ucla": {
         "company": "UCLA — Ingeniería en Informática",
         "location": "Barquisimeto, Venezuela",
         "role": "Desarrollador de Proyectos Académicos",
         "date": "2021 — 2026",
-        "description": "Diseñé y desarrollé múltiples proyectos de software como parte de mi formación universitaria, aplicando conceptos de arquitectura de software, bases de datos y desarrollo full stack. Trabajé en soluciones web y aplicaciones móviles con arquitecturas de microservicios y patrones de diseño, fortaleciendo mi criterio técnico en escenarios con requerimientos cambiantes, tal como ocurre en proyectos reales de la industria."
+        "description": "Diseñé y desarrollé múltiples proyectos de software en el marco de mi formación universitaria, aplicando principios de arquitectura de software, estructuras de datos y algoritmos, bases de datos relacionales y desarrollo full stack. Trabajé en soluciones web y aplicaciones móviles utilizando arquitecturas de microservicios, patrones de diseño y buenas prácticas de ingeniería de software, como control de versiones, pruebas unitarias y metodologías ágiles de desarrollo. Esta formación fortaleció mi criterio técnico frente a requerimientos cambiantes y necesidades específicas del negocio, de forma similar a lo que ocurre en proyectos reales de la industria."
       }
     }
   },
