@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { MapPin, FileText } from "lucide-react";
+import { MapPin, FileText, ExternalLink } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 import { useTranslation } from "react-i18next";
 import { JOBS, type Job } from "../data/content";
@@ -43,9 +42,24 @@ function JobItem({ job, index }: { job: Job; index: number }) {
       {/* Right Column: Job Details */}
       <div className="md:col-span-9 flex flex-col gap-4">
         <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-          <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-            {jobData.company}
-          </h3>
+          {job.companyLink ? (
+            <a
+              href={job.companyLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/company inline-flex items-center gap-1.5 text-2xl font-bold text-white hover:text-purple-300 transition-colors duration-300 cursor-pointer"
+            >
+              {jobData.company}
+              <ExternalLink
+                size={16}
+                className="opacity-50 group-hover/company:opacity-100 group-hover/company:text-purple-400 transition-all duration-300 flex-shrink-0"
+              />
+            </a>
+          ) : (
+            <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
+              {jobData.company}
+            </h3>
+          )}
           <span className="text-sm font-mono text-purple-500 font-medium">
             {jobData.role}
           </span>

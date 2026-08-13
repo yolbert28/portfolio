@@ -4,6 +4,7 @@ export interface Job {
   translationKey: string;
   tags: string[];
   recommendationLetter?: string;
+  companyLink?: string;
 }
 
 export interface Skill {
@@ -42,8 +43,9 @@ export const ABOUT_TAGS = [
 export const JOBS: Job[] = [
   {
     translationKey: "ricardo_teran",
-    tags: ["Python", "JavaScript", "PostgreSQL", "Vim", "Odoo"],
+    tags: ["Python", "JavaScript", "PostgreSQL", "Vim", "Odoo", "SSH", "Docker"],
     recommendationLetter: "/carta_de_recomendacion_ricardoteran.pdf",
+    companyLink: "https://www.ricardoteran.net/",
   },
   {
     translationKey: "ucla",
