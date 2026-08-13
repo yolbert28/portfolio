@@ -117,4 +117,5 @@ export const CONTACT = {
   github: "https://github.com/yolbert28",
   linkedin: "https://www.linkedin.com/in/yolbert-torrealba-b724a035a/",
   email: "yolbertdev@gmail.com",
+  whatsapp: "+584123113313",
 };

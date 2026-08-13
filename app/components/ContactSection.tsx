@@ -1,4 +1,5 @@
 import { Mail, ArrowRight } from "lucide-react";
+import { WhatsappIcon } from "./SocialIcons";
 import { useInView } from "../hooks/useInView";
 import { useTranslation } from "react-i18next";
 import { SectionBadge } from "./SectionBadge";
@@ -78,24 +79,47 @@ export function ContactSection() {
           {description}
         </p>
 
-        <a
-          href={`mailto:${CONTACT.email}`}
-          className="group relative flex items-center justify-center gap-3 bg-white text-black font-semibold rounded-full px-8 py-4 overflow-hidden transition-transform hover:scale-105 active:scale-95"
-          style={{
-            opacity: inView ? 1 : 0,
-            transform: inView ? "translateY(0) scale(1)" : "translateY(20px) scale(0.9)",
-            transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
-            transitionDelay: "500ms",
-          }}
-        >
-          <div className="absolute inset-0 bg-linear-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="group relative flex items-center justify-center gap-3 bg-white text-black font-semibold rounded-full px-8 py-4 overflow-hidden transition-transform hover:scale-105 active:scale-95"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? "translateY(0) scale(1)" : "translateY(20px) scale(0.9)",
+              transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+              transitionDelay: "500ms",
+            }}
+          >
+            <div className="absolute inset-0 bg-linear-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-          <Mail className="relative z-10 w-5 h-5 group-hover:text-white transition-colors duration-300" />
-          <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-            {buttonLabel}
-          </span>
-          <ArrowRight className="relative z-10 w-5 h-5 group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
-        </a>
+            <Mail className="relative z-10 w-5 h-5 group-hover:text-white transition-colors duration-300" />
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+              {buttonLabel}
+            </span>
+            <ArrowRight className="relative z-10 w-5 h-5 group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
+          </a>
+
+          <a
+            href={`https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center justify-center gap-3 bg-[#25D366] text-white font-semibold rounded-full px-8 py-4 overflow-hidden transition-transform hover:scale-105 active:scale-95 border-none"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? "translateY(0) scale(1)" : "translateY(20px) scale(0.9)",
+              transition: "opacity 0.6s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+              transitionDelay: "600ms",
+            }}
+          >
+            <div className="absolute inset-0 bg-linear-to-r from-[#128C7E] to-[#25D366] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            <WhatsappIcon className="relative z-10 w-5 h-5 transition-colors duration-300" />
+            <span className="relative z-10 transition-colors duration-300">
+              WhatsApp
+            </span>
+            <ArrowRight className="relative z-10 w-5 h-5 transition-all duration-300 group-hover:translate-x-1" />
+          </a>
+        </div>
       </div>
     </section>
   );

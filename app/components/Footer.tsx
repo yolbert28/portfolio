@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./SocialIcons";
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from "./SocialIcons";
 import { useTranslation } from "react-i18next";
 import { CONTACT } from "../data/content";
 
@@ -27,6 +27,7 @@ export function Footer() {
           <SocialLink href={CONTACT.github} icon={<GithubIcon size={18} />} label="GitHub" />
           <SocialLink href={CONTACT.linkedin} icon={<LinkedinIcon size={18} />} label="LinkedIn" />
           <SocialLink href={`mailto:${CONTACT.email}`} icon={<Mail size={18} />} label="Email" />
+          <SocialLink href={`https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}`} icon={<WhatsappIcon size={18} />} label="WhatsApp" />
         </div>
 
       </div>
