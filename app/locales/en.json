@@ -81,12 +81,12 @@
         "title": "Watery",
         "description": "Android application with a widget that automates water price calculations (barrels) by extracting the official Central Bank of Venezuela (BCV) exchange rate through web scraping."
       },
-      "financial": {
-        "title": "Financial Dashboard API",
-        "description": "High-performance backend for financial analysis. Microservices architecture with websockets for live data."
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "description": "Personal website built to present my developer profile in a professional and memorable way. Features bilingual support (ES/EN), smooth animations and an interactive 3D hero scene."
       },
       "crypto": {
-        "title": "Crypto Tracker UI",
+        "title": "Oncomming",
         "description": "Responsive user interface with interactive charts and real-time updates for cryptocurrency markets."
       }
     }

@@ -81,12 +81,12 @@
         "title": "Watery",
         "description": "Aplicación Android con widget que automatiza el cálculo de precios del agua (pipas) extrayendo la tasa oficial del BCV mediante web scraping."
       },
-      "financial": {
-        "title": "Financial Dashboard API",
-        "description": "Backend de alto rendimiento para análisis financiero. Arquitectura de microservicios con websockets para datos en vivo."
+      "portfolio": {
+        "title": "Portfolio Personal",
+        "description": "Sitio web personal diseñado para presentar mi perfil como desarrollador de forma profesional e impactante. Incluye soporte bilingüe (ES/EN), animaciones fluidas y una escena 3D interactiva."
       },
       "crypto": {
-        "title": "Crypto Tracker UI",
+        "title": "Oncomming",
         "description": "Interfaz de usuario responsiva con gráficos interactivos y actualizaciones en tiempo real de mercados de criptomonedas."
       }
     }

@@ -32,7 +32,7 @@ function ProjectCard({ project, index, inView }: { project: Project; index: numb
         <img
           src={project.image}
           alt={projectData.title}
-          className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+          className="w-full h-full object-cover object-top opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
         />
         <div className="absolute inset-0 bg-linear-to-t from-[#000314] to-transparent opacity-80" />
       </div>

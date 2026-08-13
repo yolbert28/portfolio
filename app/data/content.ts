@@ -88,17 +88,15 @@ export const PROJECTS: Project[] = [
   {
     translationKey: "watery",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+      "/watery.jpg",
     tags: ["Kotlin", "Jetpack Compose", "Room"],
     repoLink: "https://github.com/yolbert28/watery.git",
   },
   {
-    translationKey: "financial",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-    tags: ["Node.js", "PostgreSQL", "Docker"],
-    demoLink: "#",
-    repoLink: "#",
+    translationKey: "portfolio",
+    image: "/portfolio.png",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    repoLink: "https://github.com/yolbert28/portfolio",
   },
   {
     translationKey: "crypto",
