@@ -37,6 +37,10 @@ export const ABOUT_TAGS = [
   "Odoo",
   "PostgreSQL",
   "Python",
+  "Java",
+  "Spring Boot",
+  "Github",
+  "Docker"
 ];
 
 // ─── Career Data ──────────────────────────────────────────────────────────────
