@@ -63,7 +63,6 @@ export const SKILLS_ROW_1: Skill[] = [
   { name: "Flutter", icon: "https://skillicons.dev/icons?i=flutter" },
   { name: "Kotlin", icon: "https://skillicons.dev/icons?i=kotlin" },
   { name: "Dart", icon: "https://skillicons.dev/icons?i=dart" },
-  { name: "Firebase", icon: "https://skillicons.dev/icons?i=firebase" },
   { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
   { name: "Spring boot", icon: "https://skillicons.dev/icons?i=spring" },
 ];
@@ -75,13 +74,11 @@ export const SKILLS_ROW_2: Skill[] = [
   { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgres" },
   { name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
   { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
-  { name: "NestJS", icon: "https://skillicons.dev/icons?i=nest" },
 ];
 
 export const SKILLS_ROW_3: Skill[] = [
   { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
   { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
-  { name: "Figma", icon: "https://skillicons.dev/icons?i=figma" },
   { name: "Linux", icon: "https://skillicons.dev/icons?i=linux" },
   { name: "Python", icon: "https://skillicons.dev/icons?i=python" },
   { name: "Go", icon: "https://skillicons.dev/icons?i=golang" },

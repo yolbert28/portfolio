@@ -211,7 +211,7 @@ export function HeroSection() {
           className={`flex items-center text-xl sm:text-3xl font-medium h-12 mt-3 transition-all duration-1000 delay-300 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
           style={{ color: "#c4b5fd" }}
         >
-          <span className="mr-1">{currentText}</span>
+          <span className="mr-1">Full Stack Developer</span>
           <span
             className="w-0.5 h-6 sm:h-8 animate-pulse"
             style={{ backgroundColor: "#7c3aed" }}
