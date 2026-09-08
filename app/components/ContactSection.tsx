@@ -41,7 +41,7 @@ export function ContactSection() {
       <div className="relative max-w-4xl mx-auto px-6 flex flex-col items-center">
         {/* BADGE */}
         <div className="mb-6">
-          <SectionBadge inView={inView} number="05" />
+          <SectionBadge inView={inView} number="06" />
         </div>
 
         {/* TITLE */}

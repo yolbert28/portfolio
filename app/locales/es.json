@@ -4,6 +4,7 @@
     "skills": "Habilidades",
     "projects": "Proyectos",
     "experience": "Experiencia",
+    "certificates": "Certificados",
     "contact": "Contacto"
   },
   "topbar": {
@@ -89,6 +90,20 @@
         "title": "Banco Universitario",
         "description": "Aplicación frontend para un banco universitario ficticio desarrollada con React y Redux. Ofrece una experiencia completa de banca en línea que incluye autenticación de usuarios, directorio de contactos, historial de movimientos y simulación de transferencias."
       }
+    }
+  },
+  "certificates": {
+    "title": "Certificados",
+    "subtitle": "Credenciales verificadas y certificaciones profesionales.",
+    "show_credential": "Mostrar credencial",
+    "issued": "Expedición",
+    "credential_id": "ID de credencial",
+    "skills": "Aptitudes",
+    "items": {
+      "sql_intermediate": { "title": "SQL (Intermediate)" },
+      "sql_basic": { "title": "SQL (Basic)" },
+      "linux_unhatched": { "title": "Linux Unhatched" },
+      "aprende_sql": { "title": "Aprende SQL — Curso completo" }
     }
   },
   "contact": {

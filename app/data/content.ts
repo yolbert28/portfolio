@@ -20,6 +20,16 @@ export interface Project {
   demoLink?: string;
 }
 
+export interface Certificate {
+  translationKey: string;
+  issuer: string;
+  issuerLogo: string;
+  issueDate: string;
+  credentialId: string;
+  credentialUrl: string;
+  skills: string[];
+}
+
 // ─── Hero Data ────────────────────────────────────────────────────────────────
 export const PROFESSIONS = [
   "Full Stack Developer",
@@ -108,6 +118,46 @@ export const PROJECTS: Project[] = [
     tags: ["React", "React Router Framework", "TypeScript", "Tailwind CSS"],
     demoLink: "https://banco-universitario.vercel.app",
     repoLink: "https://github.com/yolbert28/banco-universitario",
+  },
+];
+
+// ─── Certificates Data ────────────────────────────────────────────────────────
+export const CERTIFICATES: Certificate[] = [
+  {
+    translationKey: "sql_intermediate",
+    issuer: "HackerRank",
+    issuerLogo: "hackerrank_logo.jpeg",
+    issueDate: "Sept. 2026",
+    credentialId: "9987c46134b1",
+    credentialUrl: "https://www.hackerrank.com/certificates/9987c46134b1",
+    skills: ["SQL"],
+  },
+  {
+    translationKey: "sql_basic",
+    issuer: "HackerRank",
+    issuerLogo: "hackerrank_logo.jpeg",
+    issueDate: "Sept. 2026",
+    credentialId: "4c32f041141b",
+    credentialUrl: "https://www.hackerrank.com/certificates/4c32f041141b",
+    skills: ["SQL"],
+  },
+  {
+    translationKey: "linux_unhatched",
+    issuer: "Cisco",
+    issuerLogo: "cisco_logo.jpeg",
+    issueDate: "Sept. 2026",
+    credentialId: "7155be0a-0d1d-402b-bc84-6319c2eb6849",
+    credentialUrl: "https://www.credly.com/badges/7155be0a-0d1d-402b-bc84-6319c2eb6849/linked_in_profile",
+    skills: ["Expresiones regulares", "CLI", "Linux"],
+  },
+  {
+    translationKey: "aprende_sql",
+    issuer: "midudev",
+    issuerLogo: "midudev_logo.jpeg",
+    issueDate: "Ago. 2026",
+    credentialId: "650ae11f-26f7-4b86-89dc-b0e87324ee8c",
+    credentialUrl: "https://certificados.midudev.com/650ae11f-26f7-4b86-89dc-b0e87324ee8c.pdf",
+    skills: ["SQL", "PostgreSQL"],
   },
 ];
 

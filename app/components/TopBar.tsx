@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { key: "nav.experience", href: "#career" },
   { key: "nav.skills", href: "#skills" },
   { key: "nav.projects", href: "#projects" },
+  { key: "nav.certificates", href: "#certificates" },
   { key: "nav.contact", href: "#contact" },
 ];
 
@@ -37,7 +38,7 @@ export function TopBar() {
         if (element) {
           const rect = element.getBoundingClientRect();
           // If the top of the section passed one third of the screen (approx)
-          if (rect.top <= window.innerHeight / 2) {
+          if (rect.top <= window.innerHeight / 3) {
             currentSection = link.href;
           }
         }
